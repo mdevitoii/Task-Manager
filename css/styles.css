@@ -1,0 +1,47 @@
+.window-header {
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+}
+
+.header-left {
+    background-color: lightcoral;
+    width: 50%;  
+}
+
+.header-left h1 {
+    font-size: 20px;
+}
+
+.header-right {
+    background-color: lightblue;
+    width: 50%;
+}
+
+.window-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Prevents children from stretching vertically */
+}
+
+.window-sidebar {
+    background-color: lightgreen;
+    width: 10%;
+}
+.all-tasks {
+    width: 90%;
+    border-collapse: collapse;
+}
+.all-tasks td, .all-tasks th {
+    border: 1px solid blue;
+    padding: 5px;
+    text-align: left;
+    width: auto;
+}
+
+.all-tasks td:first-child,
+.all-tasks th:first-child {
+    width: 6%;
+}
