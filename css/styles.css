@@ -1,24 +1,4 @@
-.window-header {
-    background-color: beige;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1px;
-}
 
-.header-left {
-    background-color: lightcoral;
-    width: 50%;  
-}
-
-.header-left h1 {
-    font-size: 20px;
-}
-
-.header-right {
-    background-color: lightblue;
-    width: 50%;
-}
 
 .window-content {
     display: flex;
