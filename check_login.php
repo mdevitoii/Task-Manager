@@ -5,24 +5,41 @@
 
     session_start();
 
-    $user = 'devito';
-    $password = 'michael';
+    $users = [
+        01 => [
+            "username" => "admin",
+            "password" => "password",
+        ],
+        02 => [
+            "username" => "michael",
+            "password" => "devito",
+        ],
+    ];
 
     // getting details from form on other page
     // var = $_POST[id]
-    $u = $_POST['uid'];
-    $p = $_POST['pwd'];
+    $input_user = $_POST['uid'];
+    $input_pwd = $_POST['pwd'];
 
-    echo $u.' '.$p; // testing
+    foreach ($users as $user) {
+        if ($user["username"] === $input_user && $user["password"] === $input_pwd) {
 
-    if ($u === $user && $p === $password) { // make sure values are identical (===)
-        $_SESSION['username'] = $user; // makes session variable username
+            $_SESSION["username"] = $user["username"];
 
-        header("Location: home.php"); // sends user to dashboard
+            switch ($user["username"]) {
+                case "admin":
+                    header("Location: admin.php");
+                    break;
+                default:
+                    header("Location: home.php");
+                    break;
+            }
+            exit;
+        }
+    }
 
-        exit;
-    };
-    header("Location: login.php");
+    $_SESSION["error"] = "Something is wrong with your permissions. Please contact your administrator.";    
+    echo "error";
+    //header("Location: login.php");
 
-
-?>
+?> 

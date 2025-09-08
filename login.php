@@ -1,6 +1,15 @@
 <!-- Michael DeVito II -->
 <!-- Login/Home page for Task Manager -->
 
+<?php 
+    session_start();
+
+    if (isset($_SESSION['username'])) { // checks to make sure that anyone logged in is not on this page
+        header("Location: home.php");
+    }
+    
+?>
+
 <html>
     <head>
 

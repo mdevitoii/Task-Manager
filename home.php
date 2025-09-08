@@ -5,6 +5,8 @@
 
     if (!isset($_SESSION['username'])) { // checks to make sure that anyone not logged in is not on this page
         header("Location: login.php");
+    } else if ($_SESSION['username'] === 'admin') {
+        header("Location: admin.php");
     }
 
     echo '<h1>Welcome ' . $_SESSION['username'].'</h1>';
@@ -29,26 +31,11 @@
     <body>  
         <div class="task-manager-window">
 
-            <header class="window-header">
-
-                <div class="header-left">
-                    <h1>Welcome to Task Manager</h1>
-                </div>
-                
-                <nav class="header-right">
-                    <a href='logout.php'>Logout</a>
-                </nav>
-            </header>
-
+            <?php include 'header.php'; ?>
 
             <div class="window-content">
 
-                <div class="window-sidebar">
-                    <p>Sort by:</p>
-                    <p>Importance</p>
-                    <p>First Created<p>
-                    <p>Last Created</p>
-                </div>
+                <?php include 'sidebar.php'; ?>
                 
                 <table class="all-tasks">
                     
