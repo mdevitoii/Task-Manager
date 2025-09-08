@@ -9,7 +9,7 @@
         header("Location: admin.php");
     }
 
-    echo '<h1>Welcome ' . $_SESSION['username'].'</h1>';
+    echo '<h1>Welcome ' . $_SESSION['username'].'</h1>'; // testing only
 
 ?>
 
